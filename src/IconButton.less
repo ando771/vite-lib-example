@@ -1,0 +1,54 @@
+@import (reference) "./variables";
+
+@rootBackground: @grayLightest;
+@borderColorDisabled: #a0a0a0;
+
+.root {
+  .transparent-button-mixin();
+  color: @grayDarker;
+
+  border: 2px solid @grayDarker;
+  background: @rootBackground;
+  border-radius: 50%;
+  box-shadow: 0 1px 0 0 rgba(0,0,0,.15),0 0 0 1px rgba(0,0,0,.2);
+
+  &:focus {
+    outline: 1px black dashed;
+  }
+
+  &:active > * {
+    top: 1px;
+  }
+
+  &, &:hover {
+    color: @grayDarker;
+  }
+
+  &:hover {
+    background: darken(@rootBackground, 2%);
+  }
+
+  &::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+  }
+
+  &.disabled {
+    color: @borderColorDisabled;
+    border: @borderColorDisabled;
+  }
+
+  &.only-icon {
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    color: #fff;
+
+    &.disabled {
+      color: @borderColorDisabled;
+    }
+  }
+}

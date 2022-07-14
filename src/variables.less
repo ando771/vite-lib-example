@@ -1,0 +1,18 @@
+@grayLightest: #f3f3f3;
+@grayDarker: #4a4a4a;
+
+.transparent-button-mixin() {
+  display: inline-block;
+  background: none;
+  outline: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  overflow: visible;
+  cursor: pointer;
+
+  // Disable jumping of button content when it clicked in IE
+  & > * {
+    position: relative;
+  }
+}
